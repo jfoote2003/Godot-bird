@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddx4rekaso17f"]
+
+[ext_resource type="Script" path="res://Collisions/Obstacles/Obstacle.gd" id="1_86lah"]
+[ext_resource type="PackedScene" uid="uid://dm4sfrm8swy5o" path="res://Collisions/Obstacles/Wall.tscn" id="1_qtpga"]
+
+[node name="Obstacle" type="Node2D"]
+script = ExtResource("1_86lah")
+
+[node name="Wall" parent="." instance=ExtResource("1_qtpga")]
+position = Vector2(0, 192)
+
+[node name="Wall2" parent="." instance=ExtResource("1_qtpga")]
+position = Vector2(0, -192)
+scale = Vector2(-1, -1)

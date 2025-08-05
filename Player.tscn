@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://co0k4sli1pqsi"]
+
+[ext_resource type="Texture2D" uid="uid://cs2qrldpsr4kp" path="res://icon.svg" id="1_vnxkn"]
+[ext_resource type="Script" path="res://Player/Scripts/Player.gd" id="1_xq5d5"]
+[ext_resource type="PackedScene" uid="uid://c5vxw7amluwdh" path="res://HitBox/HitBox.tscn" id="2_h520u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2668d"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfxyx"]
+size = Vector2(128, 128)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 16
+script = ExtResource("1_xq5d5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2668d")
+
+[node name="HitBox" parent="." instance=ExtResource("2_h520u")]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_lfxyx")
+debug_color = Color(0.772549, 0.0509804, 0.215686, 0.419608)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vnxkn")

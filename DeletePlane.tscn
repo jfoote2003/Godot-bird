@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://barsloetdbcwy"]
+
+[ext_resource type="Script" path="res://Collisions/DeletePlane/DeletePlane.gd" id="1_n1dp5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqtgn"]
+size = Vector2(10, 1000)
+
+[node name="DeletePlane" type="Area2D"]
+collision_layer = 0
+collision_mask = 273
+input_pickable = false
+script = ExtResource("1_n1dp5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mqtgn")
+debug_color = Color(0.443137, 0.00392157, 0.854902, 0.419608)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

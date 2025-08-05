@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnoou1tqmog84"]
+
+[ext_resource type="PackedScene" uid="uid://h3gm6v6hot56" path="res://HurtBox/HurtBox.tscn" id="1_06ovc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tniwo"]
+size = Vector2(668, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwl4u"]
+size = Vector2(667, 74)
+
+[node name="Floor" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(334, 35.5)
+shape = SubResource("RectangleShape2D_tniwo")
+
+[node name="HurtBox" parent="." instance=ExtResource("1_06ovc")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(333.5, 34)
+shape = SubResource("RectangleShape2D_jwl4u")
+debug_color = Color(0.788235, 0, 0.329412, 0.419608)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 668.0
+offset_bottom = 71.0
+color = Color(0.145098, 0.392157, 0.0862745, 1)
